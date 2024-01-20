@@ -1,34 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import axios from 'axios';
+import './App.css';
+import About from './About';
+import Contact from './Contact';
 
 function App() {
+  const [nasaData, setNasaData] = useState(null);
+  const [harvardData, setHarvardData] = useState(null);
   const [count, setCount] = useState(0)
 
+  useEffect(() => {
+    axios.get('https://api.nasa.gov/planetary/apod?api_key=cIPsR3j79PvPN818xRioqvwRCrw3A9Tzw5bIr7J0')
+    .then(response => setNasaData(response.data))
+    .catch(error => console.error('Error fetching NASA data:', error));
+
+    axios.get(`https://api.harvard.edu/data?api_key=YOUR_HARVARD_API_KEY`)
+    .then(response => setHarvardData(response.data))
+    .catch(error => console.error('Error fetching Harvard data:', error));
+  }, []);
+
   return (
-    <>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <header>
+          <h1>Mystery Educator</h1>
+        </header>
+        <body>
+
+        </body>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
   )
 }
 
