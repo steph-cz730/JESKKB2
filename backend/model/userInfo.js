@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema({
     WeeklyFacts: Boolean
 }, {collection : "userData"})
 
-const user = mongoose.model("User", userSchema)
+const user = mongoose.model("user", userSchema)
 module.exports = {
     user
 }

@@ -1,5 +1,5 @@
 const express = require ('express')
-const { user } = require('../models/userInformation')
+const { user } = require('../model/userInfo')
 
 const router = express.Router()
 
@@ -14,9 +14,9 @@ router.post('/', async (req, res) => {
 })
 
 router.get('/', async (req, res) => {
-    const users = await HTMLTableRowElement.find({})
+    const users = await user.find({})
     console.log(users)
-    res.stats(200).json({
+    res.status(200).json({
         data: users
     })
 })
