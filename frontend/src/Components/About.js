@@ -2,6 +2,7 @@ import React from "react";
 import stephanieImage from '../Images/stephanie.jpg';
 import kenImage from '../Images/ken.jpg';
 import bryannaImage from '../Images/bryanna.jpg';
+import kristenImage from '../Images/kristen.jpg';
 
 const About = () => {
   return (
@@ -47,7 +48,7 @@ const About = () => {
         </div>
       </div>
       <div className="team-member">
-        <img src={"professional pic4"} alt="Kristen Scheffler" />
+        <img src={kristenImage} alt="Kristen Scheffler" />
         <div>
           <h3>Kristen Scheffler</h3>
           <p>Hello, I'm Kristen Scheffler, a passionate junior tech learner based in the beautiful
