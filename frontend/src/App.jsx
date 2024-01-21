@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
 import './App.css';
-import About from './About';
-import Contact from './Contact';
 
 function App() {
   const [nasaData, setNasaData] = useState(null);
@@ -14,7 +12,7 @@ function App() {
     .then(response => setNasaData(response.data))
     .catch(error => console.error('Error fetching NASA data:', error));
 
-    axios.get(`https://api.harvard.edu/data?api_key=YOUR_HARVARD_API_KEY`)
+    axios.get('https://api.harvard.edu/data?api_key=YOUR_HARVARD_API_KEY')
     .then(response => setHarvardData(response.data))
     .catch(error => console.error('Error fetching Harvard data:', error));
   }, []);
