@@ -4,7 +4,7 @@ const userSchema = new mongoose.Schema({
     subject: String,
     favoritePlanet: String,
     astronomyFan: Boolean,
-    WeeklyFacts: Boolean
+    weeklyFacts: Boolean
 }, {collection : "userData"})
 
 const user = mongoose.model("user", userSchema)
