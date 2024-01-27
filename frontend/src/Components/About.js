@@ -48,7 +48,7 @@ const About = () => {
         </div>
       </div>
       <div className="team-member">
-        <img src={kristenImage} alt="Kristen Scheffler" />
+        <img src={kristenImage} alt="Kristen Scheffler"/>
         <div>
           <h3>Kristen Scheffler</h3>
           <p>Hello, I'm Kristen Scheffler, a passionate junior tech learner based in the beautiful
